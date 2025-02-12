@@ -27,18 +27,19 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       max-width: 400px;
       margin: 20px;
+      position: relative;
     }
 
-    /* ----- Lego Batman Image ----- */
-    .batman {
+    /* ----- Animated Heart Image ----- */
+    .heart {
       width: 200px;
       height: auto;
       margin-bottom: 20px;
-      animation: batmanAnimation 2s ease-in-out infinite;
+      animation: heartAnimation 2s ease-in-out infinite;
     }
 
-    /* Animation for Lego Batman's position */
-    @keyframes batmanAnimation {
+    /* Animation for Heart's position */
+    @keyframes heartAnimation {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
@@ -79,12 +80,40 @@
       transition: transform 0.3s ease;
     }
 
+    /* ----- Extra Message Styling ----- */
+    #extraMessage {
+      display: none; /* Hidden by default */
+      margin-top: 20px;
+      font-size: 2em;
+      color: #ff1493;
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999; /* Ensure it appears above other content */
+      opacity: 0;
+      animation: popUp 1s forwards; /* Pop-up animation */
+    }
+
+    /* Pop-up animation for the message */
+    @keyframes popUp {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Lego Batman Image -->
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.clubdefotografia.com%2F%3Fc%3D228822016&psig=AOvVaw27oTsEsOE05sGpvahWzYf2&ust=1739471878367000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCIDbpu7jvosDFQAAAAAdAAAAABAE">
+    <!-- Animated Heart Image -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Heart_shape_animated.svg" class="heart" alt="Animated Heart" id="heartImage">
     
     <!-- Main Proposal Text -->
     <h1>Happy Valentine's Day!</h1>
@@ -95,7 +124,7 @@
     <button class="no" id="noButton" onclick="changeNoText()">No...</button>
     
     <!-- Hidden Extra Message -->
-    <p id="extraMessage" style="display: none; margin-top: 20px;">
+    <p id="extraMessage">
       YEAHHHHH!!!!! I LOVEEE YOUUUUUU!!! 😘😘
     </p>
   </div>
@@ -103,7 +132,7 @@
   <script>
     let yesButton = document.getElementById('yesButton');
     let noButton = document.getElementById('noButton');
-    let batmanImage = document.getElementById('batmanImage');
+    let heartImage = document.getElementById('heartImage');
     let extraMessage = document.getElementById('extraMessage');
     let noTextCounter = 0; // Track the number of "No" button presses
 
@@ -127,9 +156,9 @@
       } else if (noTextCounter === 2) {
         noButton.innerText = "Think about it...";
       } else if (noTextCounter === 3) {
-        noButton.innerText = "You're breaking my heart!";
+        noButton.innerText = "You're breaking my heart😢";
       } else {
-        noButton.innerText = "Just say yes! 😢";
+        noButton.innerText = "Just say yes. 😠";
       }
 
       // Make the "Yes" button bigger when "No" is clicked
