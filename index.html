@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Valentine Proposal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* ----- Global Styles ----- */
     body {
@@ -84,7 +84,7 @@
 <body>
   <div class="container">
     <!-- Lego Batman Image -->
-    <img src="https://i.pinimg.com/originals/9a/27/1d/9a271d0e7e08c7fd7c8a058c1b15f500.png" class="batman" alt="Lego Batman" id="batmanImage">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Lego_Batman_logo.svg/1024px-Lego_Batman_logo.svg.png" class="batman" alt="Lego Batman" id="batmanImage">
     
     <!-- Main Proposal Text -->
     <h1>Happy Valentine's Day!</h1>
@@ -96,7 +96,7 @@
     
     <!-- Hidden Extra Message -->
     <p id="extraMessage" style="display: none; margin-top: 20px;">
-      I knew it! I can't wait to create beautiful memories with you.
+      YEAHHHHH!!!!! I LOVEEE YOUUUUUU!!! 😘😘
     </p>
   </div>
 
@@ -110,7 +110,9 @@
     // Function to reveal the extra message on "Yes" button click
     function enlargeYesButton() {
       yesButton.classList.add('grow');
-      yesButton.style.transform = `scale(${1 + 0.1 * Math.min(10, yesButton.style.transform.replace('scale(', '').replace(')', '') || 0)})`;
+      let currentScale = parseFloat(yesButton.style.transform.replace('scale(', '').replace(')', '')) || 1;
+      let newScale = currentScale + 0.1;
+      yesButton.style.transform = `scale(${newScale})`;
       
       // If you want the extra message to show after "Yes"
       extraMessage.style.display = 'block';
@@ -125,9 +127,9 @@
       } else if (noTextCounter === 2) {
         noButton.innerText = "Think about it...";
       } else if (noTextCounter === 3) {
-        noButton.innerText = "You're breaking my heart 😢";
+        noButton.innerText = "You're breaking my heart!";
       } else {
-        noButton.innerText = "Just say yes. 😠";
+        noButton.innerText = "Just say yes! 😢";
       }
     }
   </script>
