@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Valentine Proposal</title>
+  <style>
+    /* ----- Global Styles ----- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Change gradient colors here */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* ----- Container ----- */
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.85); /* Background color and opacity */
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      max-width: 400px;
+      margin: 20px;
+    }
+
+    /* ----- Heading and Text ----- */
+    h1 {
+      font-size: 2.5em;
+      color: #e91e63; /* Change heading color here */
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 1.2em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    /* ----- Animated Heart ----- */
+    .heart {
+      font-size: 4em;
+      color: #e91e63; /* Change heart color here */
+      animation: beat 1s infinite;
+      margin-bottom: 20px;
+    }
+    
+    @keyframes beat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* ----- Button Styling ----- */
+    button {
+      background: #e91e63;
+      border: none;
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    button:hover {
+      background: #d81b60;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Animated Heart Icon -->
+    <div class="heart">&#10084;</div>
+    <!-- Main Proposal Text -->
+    <h1>Happy Valentine's Day!</h1>
+    <p>Will you be my Valentine?</p>
+    <!-- Interactive Button -->
+    <button onclick="showExtraMessage()">Yes, I will!</button>
+    <!-- Hidden Extra Message -->
+    <p id="extraMessage" style="display: none; margin-top: 20px;">
+      I knew it! I can't wait to create beautiful memories with you.
+    </p>
+  </div>
+
+  <script>
+    // Function to reveal the extra message on button click
+    function showExtraMessage() {
+      document.getElementById('extraMessage').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
