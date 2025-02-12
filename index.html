@@ -140,7 +140,7 @@
       <h1>Happy Valentine's Day!</h1>
       <p>Will you be my Valentine?</p>
       <!-- Interactive Yes Button -->
-      <button id="yesButton" onclick="showExtraMessage()">Yes, I will!</button>
+      <button id="yesButton" onclick="showExtraMessage(event)">Yes, I will!</button>
       <!-- Interactive No Button -->
       <button id="noButton" onclick="handleNoClick()">No</button>
     </div>
@@ -169,7 +169,8 @@
     }
 
     // Function to show the extra message and blur the background when Yes is clicked
-    function showExtraMessage() {
+    function showExtraMessage(event) {
+      event.stopPropagation(); // Prevent event from propagating to body and hiding the pop-up
       // Show the extra message
       document.getElementById('extraMessage').style.display = 'block';
 
