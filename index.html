@@ -30,18 +30,19 @@
       position: relative;
     }
 
-    /* ----- Animated Heart Image ----- */
+    /* ----- Animated Heart ----- */
     .heart {
-      width: 200px;
-      height: auto;
+      font-size: 4em;
+      color: #e91e63; /* Change heart color here */
+      animation: beat 1s infinite;
       margin-bottom: 20px;
-      animation: heartAnimation 2s ease-in-out infinite;
     }
-
-    /* Animation for Heart's position */
-    @keyframes heartAnimation {
+    
+    @keyframes beat {
       0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.2); }
       100% { transform: scale(1); }
     }
 
