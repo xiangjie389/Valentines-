@@ -93,7 +93,7 @@
       background: #d81b60;
     }
 
-    /* ----- Hidden Extra Message ----- */
+    /* ----- Hidden Extra Message (Pop-up) ----- */
     #extraMessage {
       position: fixed;
       top: 50%;
@@ -101,12 +101,13 @@
       transform: translate(-50%, -50%);
       font-size: 2em;
       color: #fff;
-      background: rgba(0, 0, 0, 0.8);
+      background: #d5006d; /* Deep pink background for the pop-up */
       padding: 30px;
       border-radius: 15px;
       display: none;
       z-index: 2;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
     }
 
     /* ----- Blur Effect on Background ----- */
@@ -127,7 +128,7 @@
     <button id="yesButton" onclick="showExtraMessage()">Yes, I will!</button>
     <!-- Interactive No Button -->
     <button id="noButton" onclick="handleNoClick()">No</button>
-    <!-- Hidden Extra Message -->
+    <!-- Hidden Extra Message (Pop-up) -->
     <div id="extraMessage">
       YAYYY!!!! I LOVE YOUUUUU!!! 😘😘
     </div>
