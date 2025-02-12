@@ -176,6 +176,16 @@
       // Blur the background and disable interaction with it
       document.getElementById('backgroundContainer').classList.add('blurred');
     }
+
+    // Function to reset the page when clicked outside of the pop-up message
+    document.body.addEventListener('click', function(event) {
+      const extraMessage = document.getElementById('extraMessage');
+      if (extraMessage.style.display === 'block' && !extraMessage.contains(event.target)) {
+        // Reset the pop-up and blur state when clicked outside
+        extraMessage.style.display = 'none';
+        document.getElementById('backgroundContainer').classList.remove('blurred');
+      }
+    });
   </script>
 </body>
 </html>
