@@ -18,6 +18,19 @@
       position: relative;
     }
 
+    /* ----- Background Container ----- */
+    #backgroundContainer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
     /* ----- Container ----- */
     .container {
       text-align: center;
@@ -27,8 +40,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       max-width: 400px;
       margin: 20px;
-      position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     /* ----- Heading and Text ----- */
@@ -105,7 +117,7 @@
       padding: 30px;
       border-radius: 15px;
       display: none;
-      z-index: 2; /* Ensures the pop-up appears on top of everything else */
+      z-index: 3; /* Ensures the pop-up appears on top of everything else */
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
     }
@@ -118,20 +130,25 @@
   </style>
 </head>
 <body>
-  <div class="container" id="mainContainer">
-    <!-- Animated Heart Icon -->
-    <div class="heart">&#10084;</div>
-    <!-- Main Proposal Text -->
-    <h1>Happy Valentine's Day!</h1>
-    <p>Will you be my Valentine?</p>
-    <!-- Interactive Yes Button -->
-    <button id="yesButton" onclick="showExtraMessage()">Yes, I will!</button>
-    <!-- Interactive No Button -->
-    <button id="noButton" onclick="handleNoClick()">No</button>
-    <!-- Hidden Extra Message (Pop-up) -->
-    <div id="extraMessage">
-      YAYYY!!!! I LOVE YOUUUUU!!! 😘😘
+  <!-- Background Container -->
+  <div id="backgroundContainer">
+    <!-- Main Content Container -->
+    <div class="container" id="mainContainer">
+      <!-- Animated Heart Icon -->
+      <div class="heart">&#10084;</div>
+      <!-- Main Proposal Text -->
+      <h1>Happy Valentine's Day!</h1>
+      <p>Will you be my Valentine?</p>
+      <!-- Interactive Yes Button -->
+      <button id="yesButton" onclick="showExtraMessage()">Yes, I will!</button>
+      <!-- Interactive No Button -->
+      <button id="noButton" onclick="handleNoClick()">No</button>
     </div>
+  </div>
+  
+  <!-- Hidden Extra Message (Pop-up) -->
+  <div id="extraMessage">
+    YAYYY!!!! I LOVE YOUUUUU!!! 😘😘
   </div>
 
   <script>
@@ -157,7 +174,7 @@
       document.getElementById('extraMessage').style.display = 'block';
 
       // Blur the background and disable interaction with it
-      document.getElementById('mainContainer').classList.add('blurred');
+      document.getElementById('backgroundContainer').classList.add('blurred');
     }
   </script>
 </body>
