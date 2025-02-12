@@ -84,7 +84,7 @@
 <body>
   <div class="container">
     <!-- Lego Batman Image -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Lego_Batman_logo.svg/1024px-Lego_Batman_logo.svg.png" class="batman" alt="Lego Batman" id="batmanImage">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Lego_Batman_Logo.svg/1024px-Lego_Batman_Logo.svg.png" class="batman" alt="Lego Batman" id="batmanImage">
     
     <!-- Main Proposal Text -->
     <h1>Happy Valentine's Day!</h1>
@@ -118,7 +118,7 @@
       extraMessage.style.display = 'block';
     }
 
-    // Function to change the "No" button text on each press
+    // Function to change the "No" button text on each press and enlarge the "Yes" button
     function changeNoText() {
       noTextCounter++;
       
@@ -131,6 +131,11 @@
       } else {
         noButton.innerText = "Just say yes! 😢";
       }
+
+      // Make the "Yes" button bigger when "No" is clicked
+      let currentScale = parseFloat(yesButton.style.transform.replace('scale(', '').replace(')', '')) || 1;
+      let newScale = currentScale + 0.1;
+      yesButton.style.transform = `scale(${newScale})`;
     }
   </script>
 </body>
